@@ -18,6 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 from nota import views
 from accounts import views as views_account
+from .views import home_page
 
 
 router = routers.DefaultRouter()
@@ -25,6 +26,7 @@ router.register(r'notas', views.NotaViewSet, base_name='notas')
 router.register(r'accounts', views_account.UserViewSet, base_name='accounts')
 
 urlpatterns = [
+    path('', home_page),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-auth/', include(
