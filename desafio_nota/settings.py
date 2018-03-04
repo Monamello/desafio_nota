@@ -125,7 +125,7 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
     ],
     'DATETIME_FORMAT': '%d/%m/%Y %H:%M:%S',
     "TIME_ZONE": 'America/Sao_Paulo'

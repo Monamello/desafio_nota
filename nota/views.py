@@ -1,11 +1,11 @@
-from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from .models import Nota
 from .serializers import NotaSerializer
 
 
 class NotaViewSet(viewsets.ModelViewSet):
     serializer_class = NotaSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
         user = self.request.user
